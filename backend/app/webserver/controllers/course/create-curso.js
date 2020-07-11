@@ -42,8 +42,7 @@ async function createCurso(req, res, next) {
   const {
     nombreCurso,
     fechaVencimiento,
-  } = concursoData;
-//   const { nombreConcurso, categoria, bases, fechaVencimiento, primerPremio, fechaPremiados} = concursoData;
+  } = cursoData;
 
 
   const idcursos = uuidV4();
@@ -57,7 +56,7 @@ async function createCurso(req, res, next) {
   try {
     const connection = await mysqlPool.getConnection();
     try {
-      const sqlCreateConcurso = "INSERT INTO cursos SET ?";
+      const sqlCreateCurso = "INSERT INTO cursos SET ?";
       await connection.query(sqlCreateCurso, curso);
 
       connection.release();

@@ -93,7 +93,7 @@ async function getCursoAlumno(req, res, next) {
   try {
     connection = await mysqlPool.getConnection();
     const sqlQuery = `SELECT *
-      FROM concursos
+      FROM cursos
       WHERE
       users_idusers = ?
       AND fechaVencimiento < ?
@@ -110,7 +110,7 @@ async function getCursoAlumno(req, res, next) {
       return res.status(404).send();
     }
 
-    const concursos = rows.map(curso => {
+    const cursos = rows.map(curso => {
       return {
         ...curso
       };

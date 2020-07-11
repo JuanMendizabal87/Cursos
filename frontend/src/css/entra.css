@@ -74,10 +74,11 @@ header .textos-header{
     padding: 30px;
     margin: auto;
     margin-top: 100px;
+    margin-bottom: 100px;
     border-radius: 4px;
     font-family: 'calibri';
     color: white;
-   
+    text-align: center;   
 }
 
 
@@ -118,6 +119,12 @@ header .textos-header{
     color: white;
     text-decoration: underline;
 }
+
+.form-enter h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
 
 
 

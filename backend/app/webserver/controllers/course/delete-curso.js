@@ -5,7 +5,7 @@ const mysqlPool = require("../../../database/mysql-pool");
 
 async function validate(payload) {
   const schema = Joi.object({
-    idconcursos: Joi.string().required()
+    idcursos: Joi.string().required()
   });
 
   Joi.assert(payload, schema);
@@ -26,7 +26,7 @@ async function deleteCurso(req, res, next) {
     connection = await mysqlPool.getConnection();
     const sqlQuery = `UPDATE cursos
       SET deleted_at = ?
-      WHERE idconcursos = ?
+      WHERE idcursos = ?
         
         AND deleted_at IS NULL`;
 

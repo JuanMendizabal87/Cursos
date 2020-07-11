@@ -13,9 +13,9 @@ async function getCursosByCategory(req, res, next) {
     connection.release();
     
     // preparar respuesta
-    const concursos = rows.map(curso => {
+    const cursos = rows.map(curso => {
       return {
-        ...concurso
+        ...curso
         // created_At: undefined,
         // updated_At: undefined,
         // deleted_At: undefined
@@ -44,23 +44,23 @@ module.exports = getCursosByCategory;
 
 // const mysqlPool = require("../../../database/mysql-pool");
 
-// async function getConcursosByCategoria(req, res, next) {
+// async function getursosByCategoria(req, res, next) {
 //   const categoria = { ...req.body };
 //   // const byCategoria = categoria.categoria;
 
 //   // 2. Select all tags
 //   try {
 //     const connection = await mysqlPool.getConnection();
-//     const sqlQuery = `SELECT * FROM concursos
+//     const sqlQuery = `SELECT * FROM cursos
 //     WHERE categoria = ? `;
 
 //     const [rows] = await connection.execute(sqlQuery, [categoria.categoria]);
 //     connection.release();
 
 //     // preparar respuesta
-//     const concursos = rows.map(concurso => {
+//     const cursos = rows.map(curso => {
 //       return {
-//         ...concurso
+//         ...curso
 //         // created_At: undefined,
 //         // updated_At: undefined,
 //         // deleted_At: undefined
@@ -72,11 +72,11 @@ module.exports = getCursosByCategory;
 //       };
 //     });
 
-//     return res.status(200).send(concursos);
+//     return res.status(200).send(cursos);
 //   } catch (e) {
 //     console.error(e);
 //     return res.status(500).send();
 //   }
 // }
 
-// module.exports = getConcursosByCategoria;
+// module.exports = getCursosByCategoria;
